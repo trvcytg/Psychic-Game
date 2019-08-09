@@ -1,3 +1,4 @@
+// create array of letters for computer to choose from
 const alphabet = [
   "a",
   "b",
@@ -27,3 +28,12 @@ const alphabet = [
   "z"
 ];
 console.log(alphabet);
+
+// Wins: id= `wins`
+// Losses: id= `losses`
+// Guesses Left: id= `tries`
+// Letters Guessed: id= `guessed`
+
+function game(event) {
+  let computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+}

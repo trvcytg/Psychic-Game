@@ -1,8 +1,17 @@
+body {
+  background-color: #249791;
+}
 h1 {
   font: bold 2em Georgia;
+  margin: 5% 0 2% 0;
   margin-bottom: 2%;
+  background-color: aquamarine;
+  color: rgb(4, 70, 70);
+  padding-left: 5%;
 }
 p {
   font: 1em Georgia;
   line-height: 1.5;
+  margin-left: 5%;
+  color: white;
 }

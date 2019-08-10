@@ -2,16 +2,16 @@ body {
   background-color: #249791;
 }
 h1 {
-  font: bold 2em Georgia;
+  padding-left: 5%;
   margin: 5% 0 2% 0;
   margin-bottom: 2%;
-  background-color: aquamarine;
+  font: bold 2em Georgia;
   color: rgb(4, 70, 70);
-  padding-left: 5%;
+  background-color: aquamarine;
 }
 p {
-  font: 1em Georgia;
-  line-height: 1.5;
   margin-left: 5%;
+  line-height: 1.5;
+  font: 1em Georgia;
   color: white;
 }

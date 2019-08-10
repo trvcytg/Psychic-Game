@@ -64,8 +64,8 @@ compChoice();
 
 // function to determine whether user input matches Computer choice
 document.onkeyup = function playGame(event) {
-  let userGuess = event.key;
-  console.log(`you guessed: ${userGuess}`);
+  let userGuess = event.key.toLocaleLowerCase();
+  console.log(`you pressed: ${userGuess}`);
   if (alphabet.includes(userGuess)) {
     if (userGuess == computerGuess) {
       wins++;
@@ -86,8 +86,9 @@ document.onkeyup = function playGame(event) {
       newGame();
       guessedText.textContent = guessed;
     }
-  } else if (userGuess == `Meta`) {
+  } else if (userGuess == `meta`) {
     alert(`Did you just refresh? We'll give you grace this time.`);
+  } else if (userGuess == `shift` || userGuess == `capslock`) {
   } else {
     alert(`That's not even a letter.... you wasted one of your guesses..`);
     tries++;

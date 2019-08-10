@@ -46,17 +46,18 @@ let guessedText = document.getElementById("guessed");
 
 // function to determine Computer's letter choice
 function compChoice() {
-  const computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-  console.log(`Compute chose '${computerGuess}'`);
+  computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+  console.log(`Computer chose: ${computerGuess}`);
 }
 
 // function to start new game upon completion of old game
 function newGame() {
   compChoice();
-  let tries = -10;
-  triesText = tries;
+  tries = -10;
+  triesText.textContent = -tries;
   guessedText.textContent = "Make your first guess!";
-  let guessed = [];
+  lossesText.textContent = losses;
+  guessed.length = 0;
 }
 // determining Computer's initial letter choice
 compChoice();
@@ -64,20 +65,28 @@ compChoice();
 // function to determine whether user input matches Computer choice
 document.onkeyup = function playGame(event) {
   let userGuess = event.key;
-  if (tries == 0) {
-    newGame();
-    losses++;
-  } else if (userGuess == computerGuess) {
+  console.log(`you guessed: ${userGuess}`);
+  if (userGuess == computerGuess) {
     wins++;
     console.log(`winner winner, chicken dinner`);
+    newGame();
   } else {
     console.log(`wrong.`);
     tries++;
     triesText.textContent = -tries;
     guessed.push(` ${userGuess}`);
+    console.log(guessed);
   }
-  guessedText.textContent = guessed.toString;
-  //   document.getElementById("#guessed") = guessed.toString;
+  console.log(tries);
+
+  guessedText.textContent = guessed;
   winsText.textContent = wins;
   lossesText.textContent = losses;
+  if (tries == 0) {
+    losses++;
+    newGame();
+  }
 };
+
+// if (userGuess) {
+// }

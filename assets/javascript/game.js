@@ -89,9 +89,9 @@ document.onkeyup = function playGame(event) {
     // } else if (userGuess == `meta`) {
     //   alert(`Did you just refresh? We'll give you grace this time.`);
   } else if (
-    userGuess == "meta" ||
+    userGuess == `meta` ||
     userGuess == `shift` ||
-    userGuess == `capslock`
+    userGuess == `capslock` ||
   ) {
   } else {
     alert(`That's not even a letter.... you wasted one of your guesses..`);

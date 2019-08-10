@@ -62,7 +62,7 @@ function newGame() {
 // determining Computer's initial letter choice
 compChoice();
 
-// function to determine whether user input matches Computer choice
+// function to determine whether user input matches Computer choice and make appropriate changes to win, loss, chances left, and letters picked
 document.onkeyup = function playGame(event) {
   let userGuess = event.key.toLocaleLowerCase();
   console.log(`you pressed: ${userGuess}`);
@@ -86,8 +86,6 @@ document.onkeyup = function playGame(event) {
       newGame();
       guessedText.textContent = guessed;
     }
-    // } else if (userGuess == `meta`) {
-    //   alert(`Did you just refresh? We'll give you grace this time.`);
   } else if (
     userGuess == `meta` ||
     userGuess == `shift` ||
@@ -105,6 +103,3 @@ document.onkeyup = function playGame(event) {
   winsText.textContent = wins;
   lossesText.textContent = losses;
 };
-
-// if (userGuess) {
-// }

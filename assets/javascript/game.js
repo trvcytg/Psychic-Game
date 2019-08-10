@@ -77,24 +77,28 @@ document.onkeyup = function playGame(event) {
       tries++;
       triesText.textContent = -tries;
       guessed.push(` ${userGuess}`);
-      console.log(guessed);
+      console.log(`You've already guessed: ${guessed}`);
       guessedText.textContent = guessed;
     }
-    console.log(tries);
+    console.log(`Number of tries remaining: ${-tries}`);
     if (tries == 0) {
       losses++;
       newGame();
       guessedText.textContent = guessed;
     }
-  } else if (userGuess == `meta`) {
-    alert(`Did you just refresh? We'll give you grace this time.`);
-  } else if (userGuess == `shift` || userGuess == `capslock`) {
+    // } else if (userGuess == `meta`) {
+    //   alert(`Did you just refresh? We'll give you grace this time.`);
+  } else if (
+    userGuess == "meta" ||
+    userGuess == `shift` ||
+    userGuess == `capslock`
+  ) {
   } else {
     alert(`That's not even a letter.... you wasted one of your guesses..`);
     tries++;
     triesText.textContent = -tries;
     guessed.push(` ${userGuess}`);
-    console.log(guessed);
+    console.log(`You've already guessed: ${guessed}`);
     guessedText.textContent = guessed;
   }
 

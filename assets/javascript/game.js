@@ -66,26 +66,39 @@ compChoice();
 document.onkeyup = function playGame(event) {
   let userGuess = event.key;
   console.log(`you guessed: ${userGuess}`);
-  if (userGuess == computerGuess) {
-    wins++;
-    console.log(`winner winner, chicken dinner`);
-    newGame();
+  if (alphabet.includes(userGuess)) {
+    if (userGuess == computerGuess) {
+      wins++;
+      console.log(`winner winner, chicken dinner`);
+      newGame();
+      guessedText.textContent = guessed;
+    } else {
+      console.log(`wrong.`);
+      tries++;
+      triesText.textContent = -tries;
+      guessed.push(` ${userGuess}`);
+      console.log(guessed);
+      guessedText.textContent = guessed;
+    }
+    console.log(tries);
+    if (tries == 0) {
+      losses++;
+      newGame();
+      guessedText.textContent = guessed;
+    }
+  } else if (userGuess == `Meta`) {
+    alert(`Did you just refresh? We'll give you grace this time.`);
   } else {
-    console.log(`wrong.`);
+    alert(`That's not even a letter.... you wasted one of your guesses..`);
     tries++;
     triesText.textContent = -tries;
     guessed.push(` ${userGuess}`);
     console.log(guessed);
+    guessedText.textContent = guessed;
   }
-  console.log(tries);
 
-  guessedText.textContent = guessed;
   winsText.textContent = wins;
   lossesText.textContent = losses;
-  if (tries == 0) {
-    losses++;
-    newGame();
-  }
 };
 
 // if (userGuess) {
